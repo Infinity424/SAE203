@@ -17,7 +17,7 @@ require_once("fonctions.php");
             $utilisateur_saisi = $_POST["utilisateur"] ?? '';
             $motdepasse_saisi  = $_POST["motdepasse"]  ?? '';
 
-            $fichier = file_get_contents('./data/r209-tp_utilisateurs.json');
+            $fichier = file_get_contents('./data/SAE203-utilisateurs.json');
             $json    = json_decode($fichier, true);
 
             $flag = 0;

@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "utilisateur" => $pseudo,
                 "motdepasse"  => password_hash($mdp, PASSWORD_DEFAULT),
                 "email"       => $email,
-                "role"        => "user"
+                "role"        => "salarié"
             ];
             $users[] = $nouvelUser;
             file_put_contents('./data/SAE203-utilisateurs.json', json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="card-body">
                         <form method="POST" action="inscription.php">
                             <div class="mb-3">
-                                <label for="utilisateur" class="form-label">Prenom (unique)</label>
+                                <label for="utilisateur" class="form-label">Nom</label>
                                 <input type="text" class="form-control" id="utilisateur" name="utilisateur"
                                        value="<?php echo htmlspecialchars($_POST['utilisateur'] ?? ''); ?>" required>
                             </div>
