@@ -48,7 +48,7 @@ require_once("fonctions.php");
                 echo '<br><a href="./accueil.php" class="btn btn-outline-dark mt-2">Aller à l\'accueil</a>';
                 echo '</div>';
             }
-            header("Location: ./test.php");
+            header("Location: ./accueil.php");
         ?>
     </section>
     <?php piedpage(); ?>

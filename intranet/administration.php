@@ -16,7 +16,7 @@ $message = "";
 if (isset($_POST['action']) && $_POST['action'] === 'modifier_role') {
     $cible = $_POST['utilisateur'] ?? '';
     $nouveau_role = $_POST['role'] ?? '';
-    $roles_valides = ['user', 'modo', 'admin', 'visitor'];
+    $roles_valides = ['salarié','finance','admin','communication'];
     if (in_array($nouveau_role, $roles_valides)) {
         foreach ($users as &$u) {
             if ($u['utilisateur'] === $cible) {
@@ -52,6 +52,7 @@ if ($recherche !== '') {
     $users = array_filter($users, fn($u) => stripos($u['utilisateur'], $recherche) !== false);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -59,7 +60,6 @@ if ($recherche !== '') {
 </head>
 <body>
     <?php
-        entete(".");
         navigation("administration", ".");
     ?>
     <section class="container mt-4">

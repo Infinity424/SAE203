@@ -31,7 +31,6 @@ $userActuel = $users[$userIndex];
 </head>
 <body>
     <?php
-        entete(".");
         navigation("profil", ".");
     ?>
     <section class="container mt-4">

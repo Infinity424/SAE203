@@ -15,7 +15,6 @@ $utilisateurs = count(json_decode(file_get_contents("./data/SAE203-utilisateurs.
         navigation("accueil", ".");
     ?>
     <section>
-
     </section>
     <?php piedpage(); ?>
 </body>

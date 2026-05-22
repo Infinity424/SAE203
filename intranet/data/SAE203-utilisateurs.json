@@ -9,6 +9,18 @@
         "utilisateur": "Corwin",
         "motdepasse": "$2y$10$8CKbKynJIdrvbmJEJSo1Y.jAXvQjXr80pbrtq9KZiCtvROySC0Jtq",
         "email": "corwin@jspquoi.fr",
+        "role": "finance"
+    },
+    {
+        "utilisateur": "Jean-Baptiste",
+        "motdepasse": "$2y$10$4bP\/UHccDLbY2jv1cc6j..MyK9m5TZsVZy0v6H.1iANURTQ7Kn6Kq",
+        "email": "Jean-Baptiste@jspquoi.fr",
         "role": "salarié"
+    },
+    {
+        "utilisateur": "Raphaël",
+        "motdepasse": "$2y$10$NHqjxVe0zSuUJmz8b.ieZ.OyR7GZvDGxLAxUjoiey1y0r9j\/CtYSa",
+        "email": "Raphael@jspquoi.fr",
+        "role": "communication"
     }
 ]

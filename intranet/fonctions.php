@@ -26,19 +26,19 @@ function navigation($active, $racine) {
     echo '<ul class="navbar-nav me-auto">';
 
     // Double navBarre pour gerer en fonction 
-    if (!isset($_SESSION['role']) || $_SESSION['role'] == 'admin') {
+    if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
         $liens = [
-        'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
-        'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'accueil'             => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
+        'profil'              => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
         'inscriptions'        => ['url' => $racine . '/inscription.php',    'label' => 'Inscriptions'],
-        'administration'        => ['url' => $racine . '/administration.php',    'label' => 'Administration'],
+        'administration'      => ['url' => $racine . '/administration.php',    'label' => 'Administration'],
         ];
-    }elseif (!isset($_SESSION['role']) || $_SESSION['role'] == 'com') {
+    }elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'com') {
         $liens = [
         'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
         'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
         ];
-    }elseif (!isset($_SESSION['role']) || $_SESSION['role'] == 'finance') {
+    }elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'finance') {
         $liens = [
         'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
         'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
@@ -46,8 +46,7 @@ function navigation($active, $racine) {
     }else {
         $liens = [  
         'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
-        'inscription'   => ['url' => $racine . '/inscription.php',           'label' => 'Inscription'],
-        'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'profil'              => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
         ];
     }
 
