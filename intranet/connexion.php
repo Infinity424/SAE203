@@ -39,6 +39,7 @@ if (isset($_SESSION['utilisateur'])) {
                         <p class="mt-3 text-muted text-center small">
                             Utilisateur normal : user / motdepasse<br>
                             Utilisateur admin : admin / motdepasse<br>
+                            Modérateur : modo / motdepasse
                         </p>
                         <div class="text-center mt-2">
                             <a href="./inscription.php">Pas encore inscrit ? Créer un compte</a>

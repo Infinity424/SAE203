@@ -26,30 +26,28 @@ function navigation($active, $racine) {
     echo '<ul class="navbar-nav me-auto">';
 
     // Double navBarre pour gerer en fonction 
-    if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    if (!isset($_SESSION['role']) || $_SESSION['role'] == 'admin') {
         $liens = [
-        'accueil'       => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
-        'inscription'   => ['url' => $racine . '/inscription.php',            'label' => 'Inscription'],
-        'visualiser'    => ['url' => $racine . '/visualiser.php',             'label' => 'Annonces'],   
-        'proposer'      => ['url' => $racine . '/proposer.php',               'label' => 'Proposer'],
-        'rechercher'    => ['url' => $racine . '/rechercher.php',             'label' => 'Rechercher'],
+        'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
         'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
-        'modifier'      => ['url' => $racine . '/modifier.php',               'label' => 'Modifier'],
-        'Wiki'          => ['url' => $racine . '/wiki.php',                   'label' => 'Wiki'],
+        'inscriptions'        => ['url' => $racine . '/inscription.php',    'label' => 'Inscriptions'],
+        'administration'        => ['url' => $racine . '/administration.php',    'label' => 'Administration'],
         ];
-    } else {
+    }elseif (!isset($_SESSION['role']) || $_SESSION['role'] == 'com') {
         $liens = [
-        'accueil'       => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
-        'inscription'   => ['url' => $racine . '/inscription.php',            'label' => 'Inscription'],
-        'visualiser'    => ['url' => $racine . '/visualiser.php',             'label' => 'Annonces'],   
-        'proposer'      => ['url' => $racine . '/proposer.php',               'label' => 'Proposer'],
-        'rechercher'    => ['url' => $racine . '/rechercher.php',             'label' => 'Rechercher'],
+        'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
         'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
-        'modifier'      => ['url' => $racine . '/modifier.php',               'label' => 'Modifier'],
-        'administration'=> ['url' => $racine . '/administration.php',         'label' => 'Administration'],
-        'view1'         => ['url' => $racine . '/admin/view_utilsateurs.php', 'label' => 'View Utilisateurs'],
-        'view2'         => ['url' => $racine . '/admin/view_annonces.php',    'label' => 'View Annonces'],
-        'Wiki'          => ['url' => $racine . '/wiki.php',                   'label' => 'Wiki'],
+        ];
+    }elseif (!isset($_SESSION['role']) || $_SESSION['role'] == 'finance') {
+        $liens = [
+        'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
+        'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        ];
+    }else {
+        $liens = [  
+        'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
+        'inscription'   => ['url' => $racine . '/inscription.php',           'label' => 'Inscription'],
+        'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
         ];
     }
 
