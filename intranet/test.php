@@ -9,12 +9,14 @@ $utilisateurs = count(json_decode(file_get_contents("./data/SAE203-utilisateurs.
 <head>
     <?php parametrespage("Accueil"); ?>
 </head>
-<body>
+<body style="background-color:#0F1E38;">
     <?php
-        entete(".");
+        
         navigation("accueil", ".");
     ?>
-    
+    <section>
+
+    </section>
     <?php piedpage(); ?>
 </body>
 </html>

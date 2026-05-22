@@ -3,7 +3,7 @@ session_start();
 require_once("fonctions.php");
 // Si déjà connecté, rediriger vers accueil
 if (isset($_SESSION['utilisateur'])) {
-    header("Location: ./accueil.php");
+    header("Location: ./test.php");
     exit();
 }
 ?>
@@ -14,7 +14,6 @@ if (isset($_SESSION['utilisateur'])) {
 </head>
 <body>
     <?php
-        entete(".");
         navigation("connexion", ".");
     ?>
     <section class="container mt-4">

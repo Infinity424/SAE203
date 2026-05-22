@@ -9,7 +9,7 @@ require_once("fonctions.php");
 </head>
 <body>
     <?php
-        entete(".");
+    
         navigation("connexion", ".");
     ?>
     <section class="container mt-4">
@@ -17,7 +17,7 @@ require_once("fonctions.php");
             $utilisateur_saisi = $_POST["utilisateur"] ?? '';
             $motdepasse_saisi  = $_POST["motdepasse"]  ?? '';
 
-            $fichier = file_get_contents('./data/r209-tp_utilisateurs.json');
+            $fichier = file_get_contents('./data/SAE203-utilisateurs.json');
             $json    = json_decode($fichier, true);
 
             $flag = 0;
@@ -48,7 +48,7 @@ require_once("fonctions.php");
                 echo '<br><a href="./accueil.php" class="btn btn-outline-dark mt-2">Aller à l\'accueil</a>';
                 echo '</div>';
             }
-            header("Location: ./accueil.php");
+            header("Location: ./test.php");
         ?>
     </section>
     <?php piedpage(); ?>

@@ -10,5 +10,11 @@
         "motdepasse": "$2y$10$cGCzt4x.fhg0U9lPiotK7uV4bbFTJtNuQea7gGnMcqDgsgttikpB2",
         "email": "corwin@jspquoi.fr",
         "role": "user"
+    },
+    {
+        "utilisateur": "jb",
+        "motdepasse": "$2y$10$\/NVcCjDnCmatKhFk0qHC1u4K6nP7lCzy4Cq0elzSEs5xykKil8wDu",
+        "email": "jbaubry88@gmail.com",
+        "role": "user"
     }
 ]

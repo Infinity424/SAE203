@@ -54,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <?php
-        entete(".");
         navigation("inscription", ".");
     ?>
     <section class="container mt-4">
