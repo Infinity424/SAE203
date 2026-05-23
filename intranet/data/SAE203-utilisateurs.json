@@ -1,7 +1,7 @@
 [
     {
         "utilisateur": "admin",
-        "motdepasse": "$2y$10$EztV.T8zsvz4sXMVAOBiKee.ByapuNsNPfp4BsoVtNNuZtRGn7YKa",
+        "motdepasse": "$2y$10$KdG1dYbBB63dW8rfb5\/p\/u4t97wN06VJKVHVsF\/9pSLDCNUagXSp2",
         "email": "admin@admin.com",
         "role": "admin"
     },
@@ -21,6 +21,12 @@
         "utilisateur": "Raphaël",
         "motdepasse": "$2y$10$NHqjxVe0zSuUJmz8b.ieZ.OyR7GZvDGxLAxUjoiey1y0r9j\/CtYSa",
         "email": "Raphael@jspquoi.fr",
-        "role": "communication"
+        "role": "com"
+    },
+    {
+        "utilisateur": "Martin",
+        "motdepasse": "$2y$10$QRfXx1QbQWMN.0gB9aN1hOB6RQl0cOdDiKdL.Y4L3M..wQ93Zqtcq",
+        "email": "martin@techloc.fr",
+        "role": "salarié"
     }
 ]

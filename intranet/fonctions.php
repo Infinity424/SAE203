@@ -1,6 +1,6 @@
 <?php
 
-// Définit l'en-tête technique (meta, title, bootstrap)
+// Définit l'en-tête technique
 function parametrespage($titre) {
     echo '<meta charset="UTF-8">';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
@@ -25,28 +25,40 @@ function navigation($active, $racine) {
     echo '<div class="collapse navbar-collapse" id="navbarNav">';
     echo '<ul class="navbar-nav me-auto">';
 
-    // Double navBarre pour gerer en fonction 
+    // 1 navbarre pour chaque role
     if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
         $liens = [
-        'accueil'             => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
-        'profil'              => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
-        'inscriptions'        => ['url' => $racine . '/inscription.php',    'label' => 'Inscriptions'],
-        'administration'      => ['url' => $racine . '/administration.php',    'label' => 'Administration'],
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'inscriptions'              => ['url' => $racine . '/inscription.php',            'label' => 'Inscriptions'],
+        'administration'            => ['url' => $racine . '/administration.php',         'label' => 'Administration'],
+        'annuaire_clients'          => ['url' => $racine . '/annuaire_clients.php',       'label' => 'Annuaire clients'],
+        'annuaire_entreprise'       => ['url' => $racine . '/annuaire_entreprise.php',    'label' => 'Annuaire entreprise'],
+        'annuaire_partenaires'      => ['url' => $racine . '/annuaire_partenaires.php',   'label' => 'Annuaire partenaires'],
         ];
     }elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'com') {
         $liens = [
-        'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
-        'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'annuaire_clients'          => ['url' => $racine . '/annuaire_clients.php',       'label' => 'Annuaire clients'],
+        'annuaire_entreprise'       => ['url' => $racine . '/annuaire_entreprise.php',    'label' => 'Annuaire entreprise'],
+        'annuaire_partenaires'      => ['url' => $racine . '/annuaire_partenaires.php',   'label' => 'Annuaire partenaires'],
         ];
     }elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'finance') {
         $liens = [
-        'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
-        'profil'        => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'annuaire_clients'          => ['url' => $racine . '/annuaire_clients.php',       'label' => 'Annuaire clients'],
+        'annuaire_entreprise'       => ['url' => $racine . '/annuaire_entreprise.php',    'label' => 'Annuaire entreprise'],
+        'annuaire_partenaires'      => ['url' => $racine . '/annuaire_partenaires.php',   'label' => 'Annuaire partenaires'],
         ];
     }else {
         $liens = [  
-        'accueil'       => ['url' => $racine . '/accueil.php',                   'label' => 'Accueil'],
-        'profil'              => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'annuaire_clients'          => ['url' => $racine . '/annuaire_clients.php',       'label' => 'Annuaire clients'],
+        'annuaire_entreprise'       => ['url' => $racine . '/annuaire_entreprise.php',    'label' => 'Annuaire entreprise'],
+        'annuaire_partenaires'      => ['url' => $racine . '/annuaire_partenaires.php',   'label' => 'Annuaire partenaires'],
         ];
     }
 

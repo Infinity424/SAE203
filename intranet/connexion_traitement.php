@@ -1,56 +1,67 @@
 <?php
 session_start();
-require_once("fonctions.php");
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <?php parametrespage("Connexion - Traitement"); ?>
-</head>
-<body>
-    <?php
-    
-        navigation("connexion", ".");
-    ?>
-    <section class="container mt-4">
-        <?php
-            $utilisateur_saisi = $_POST["utilisateur"] ?? '';
-            $motdepasse_saisi  = $_POST["motdepasse"]  ?? '';
 
-            $fichier = file_get_contents('./data/SAE203-utilisateurs.json');
-            $json    = json_decode($fichier, true);
+// Rediriger si déjà connecté
+if (isset($_SESSION['utilisateur'])) {
+    header("Location: ./accueil.php");
+    exit();
+}
 
-            $flag = 0;
-            $utilisateurConnecte = null;
+// Vérifier que la requête vient bien d'un POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header("Location: ./connexion.php");
+    exit();
+}
 
-            foreach ($json as $user) {
-                if ($user["utilisateur"] === $utilisateur_saisi) {
-                    if (password_verify($motdepasse_saisi, $user["motdepasse"])) {
-                        $flag = 1;
-                        $utilisateurConnecte = $user;
-                    }
-                }
-            }
+$utilisateur_saisi = trim($_POST['utilisateur'] ?? '');
+$motdepasse_saisi  = $_POST['motdepasse'] ?? '';
 
-            if ($flag === 0) {
-                echo '<div class="alert alert-danger">';
-                echo 'Erreur : le nom d\'utilisateur ou le mot de passe est incorrect.';
-                echo '<br><a href="./connexion.php" class="btn btn-outline-dark mt-2">Retour au formulaire</a>';
-                echo '</div>';
-            } else {
-                // Création des variables de session
-                $_SESSION['utilisateur'] = $utilisateurConnecte['utilisateur'];
-                $_SESSION['role']        = $utilisateurConnecte['role'];
+// Validation des entrées
+if ($utilisateur_saisi === '' || $motdepasse_saisi === '') {
+    header("Location: ./connexion.php?erreur=champs_vides");
+    exit();
+}
 
-                echo '<div class="alert alert-success">';
-                echo 'Bienvenue <strong>' . htmlspecialchars($_SESSION['utilisateur']) . '</strong> !';
-                echo ' Votre rôle est : <strong>' . htmlspecialchars($_SESSION['role']) . '</strong>.';
-                echo '<br><a href="./accueil.php" class="btn btn-outline-dark mt-2">Aller à l\'accueil</a>';
-                echo '</div>';
-            }
-            header("Location: ./accueil.php");
-        ?>
-    </section>
-    <?php piedpage(); ?>
-</body>
-</html>
+// Lecture du fichier JSON
+$fichier = './data/SAE203-utilisateurs.json';
+if (!file_exists($fichier)) {
+    header("Location: ./connexion.php?erreur=serveur");
+    exit();
+}
+
+$contenu = file_get_contents($fichier);
+$json    = json_decode($contenu, true);
+
+if (!is_array($json)) {
+    header("Location: ./connexion.php?erreur=serveur");
+    exit();
+}
+
+// Recherche de l'utilisateur et vérification du mot de passe
+$utilisateurConnecte = null;
+foreach ($json as $user) {
+    if (isset($user['utilisateur']) && $user['utilisateur'] === $utilisateur_saisi) {
+        if (isset($user['motdepasse']) && password_verify($motdepasse_saisi, $user['motdepasse'])) {
+            $utilisateurConnecte = $user;
+            break;
+        }
+        // Utilisateur trouvé mais mauvais mot de passe on sort pour éviter de continuer à itérer inutilement
+        break;
+    }
+}
+
+if ($utilisateurConnecte === null) {
+    header("Location: ./connexion.php?erreur=identifiants");
+    exit();
+}
+
+// Regénérer l'ID de session pour prévenir la fixation de session
+session_regenerate_id(true);
+
+// Création des variables de session
+$_SESSION['utilisateur'] = $utilisateurConnecte['utilisateur'];
+$_SESSION['role']        = $utilisateurConnecte['role'];
+$_SESSION['email']       = $utilisateurConnecte['email'] ?? '';
+
+header("Location: ./accueil.php");
+exit();
