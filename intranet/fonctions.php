@@ -32,6 +32,8 @@ function navigation($active, $racine) {
         'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
         'inscriptions'              => ['url' => $racine . '/inscription.php',            'label' => 'Inscriptions'],
         'administration'            => ['url' => $racine . '/administration.php',         'label' => 'Administration'],
+        'communication'             => ['url' => $racine . '/communication.php',          'label' => 'Communication'],
+        'finance'                   => ['url' => $racine . '/finance.php',                'label' => 'Finance'],
         'annuaire_clients'          => ['url' => $racine . '/annuaire_clients.php',       'label' => 'Annuaire clients'],
         'annuaire_entreprise'       => ['url' => $racine . '/annuaire_entreprise.php',    'label' => 'Annuaire entreprise'],
         'annuaire_partenaires'      => ['url' => $racine . '/annuaire_partenaires.php',   'label' => 'Annuaire partenaires'],
@@ -40,6 +42,7 @@ function navigation($active, $racine) {
         $liens = [
         'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
         'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'communication'             => ['url' => $racine . '/communication.php',          'label' => 'Communication'],
         'annuaire_clients'          => ['url' => $racine . '/annuaire_clients.php',       'label' => 'Annuaire clients'],
         'annuaire_entreprise'       => ['url' => $racine . '/annuaire_entreprise.php',    'label' => 'Annuaire entreprise'],
         'annuaire_partenaires'      => ['url' => $racine . '/annuaire_partenaires.php',   'label' => 'Annuaire partenaires'],
@@ -48,6 +51,7 @@ function navigation($active, $racine) {
         $liens = [
         'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
         'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'finance'                   => ['url' => $racine . '/finance.php',                'label' => 'Finance'],
         'annuaire_clients'          => ['url' => $racine . '/annuaire_clients.php',       'label' => 'Annuaire clients'],
         'annuaire_entreprise'       => ['url' => $racine . '/annuaire_entreprise.php',    'label' => 'Annuaire entreprise'],
         'annuaire_partenaires'      => ['url' => $racine . '/annuaire_partenaires.php',   'label' => 'Annuaire partenaires'],
