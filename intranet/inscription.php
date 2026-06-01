@@ -87,12 +87,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php parametrespage("Inscription"); ?>
 </head>
-<body>
+<body style="background-color:#0F1E38;">
     <?php navigation("inscription", "."); ?>
     <section class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h2 class="text-center mb-4">Créer un compte</h2>
+                <h2 class="text-center mb-4" style="color:#1D9E75;">Créer un compte</h2>
 
                 <?php if ($erreur): ?>
                     <div class="alert alert-danger"><?php echo htmlspecialchars($erreur); ?></div>

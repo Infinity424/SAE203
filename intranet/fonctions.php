@@ -75,7 +75,7 @@ function navigation($active, $racine) {
     }
 
     echo '</ul>';
-    echo '<p class="mb-1">';
+    echo '<p class="mb-1" style="color:#1D9E75;">';
     if (isset($_SESSION['utilisateur'])) {
         echo 'Connecté : <strong>' . htmlspecialchars($_SESSION['utilisateur']) . '</strong>';
         echo ' <span class="badge bg-secondary">' . htmlspecialchars($_SESSION['role']) . '</span> ';

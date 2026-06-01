@@ -76,10 +76,10 @@ $userActuel = $users[$userIndex];
 <head>
     <?php parametrespage("Mon profil"); ?>
 </head>
-<body>
+<body style="background-color:#0F1E38;">
     <?php navigation("profil", "."); ?>
-    <section class="container mt-4">
-        <h2 class="mb-3">Mon profil – <?php echo htmlspecialchars($pseudo); ?></h2>
+    <section class="container mt-4" >
+        <h2 class="mb-3" style="color:#1D9E75;">Mon profil – <?php echo htmlspecialchars($pseudo); ?></h2>
 
         <?php if ($message): ?>
             <div class="alert alert-<?php echo $typeMsg; ?>"><?php echo htmlspecialchars($message); ?></div>

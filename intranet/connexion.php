@@ -22,13 +22,13 @@ $messageErreur = isset($erreurs[$codeErreur]) ? $erreurs[$codeErreur] : '';
 <head>
     <?php parametrespage("Connexion"); ?>
 </head>
-<body>
+<body style="background-color:#0F1E38;">
     <?php navigation("connexion", "."); ?>
     <section class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-5">
-                <h2 class="text-center mb-4">Connexion au site</h2>
-                <h5 class="text-center text-muted mb-4">Entrez votre nom d'utilisateur et votre mot de passe</h5>
+                <h2 class="text-center mb-4" style="color:#1D9E75;" >Connexion au site</h2>
+                <h5 class="text-center  mb-4" style="color:#1D9E75;">Entrez votre nom d'utilisateur et votre mot de passe</h5>
 
                 <?php if ($messageErreur): ?>
                     <div class="alert alert-danger"><?php echo htmlspecialchars($messageErreur); ?></div>

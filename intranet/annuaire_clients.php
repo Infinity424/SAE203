@@ -42,10 +42,10 @@ if ($recherche !== '' && !empty($clients)) {
 <head>
     <?php parametrespage("Annuaire Clients"); ?>
 </head>
-<body>
+<body style="background-color:#0F1E38;">
     <?php navigation("annuaire_clients", "."); ?>
     <section class="container mt-4">
-        <h2 class="mb-3">Annuaire – Clients</h2>
+        <h2 class="mb-3" style="color:#1D9E75;">Annuaire – Clients</h2>
 
         <?php if ($message): ?>
             <div class="alert alert-warning"><?php echo htmlspecialchars($message); ?></div>
@@ -56,7 +56,7 @@ if ($recherche !== '' && !empty($clients)) {
             <input type="text" class="form-control w-auto" name="recherche"
                    placeholder="Rechercher..."
                    value="<?php echo htmlspecialchars($recherche); ?>">
-            <button class="btn btn-outline-dark" type="submit">Rechercher</button>
+            <button class="btn btn-outline-dark" style="color:#1D9E75;  border-color:#1D9E75;" type="submit">Rechercher</button>
             <?php if ($recherche): ?>
                 <a href="annuaire_clients.php" class="btn btn-outline-secondary">Réinitialiser</a>
             <?php endif; ?>
