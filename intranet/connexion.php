@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("fonctions.php");
+require_once("include/fonctions.php");
 
 // Si déjà connecté, rediriger vers accueil
 if (isset($_SESSION['utilisateur'])) {
