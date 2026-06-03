@@ -78,7 +78,11 @@ $equipements = [
             <h1 class="display-5 fw-bold" style="color:#1D9E75;">Bienvenue sur TechLoc</h1>
         </div>
     </section>
-
+  <div class="container text-center mb-5">
+        <a href="../wordpress" class="btn btn-lg fw-bold px-4 py-2" style="background-color: #1D9E75; color: white; border: none; border-radius: 8px;">
+            Notre site vitrine
+        </a>
+    </div>
     <div class="container my-5">
         <h2 class="fw-bold text-center mb-5" style="color:#1D9E75;">Équipements Réseau & PC Disponibles</h2>
         
