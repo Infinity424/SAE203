@@ -114,11 +114,11 @@ if ($recherche !== '') {
 <head>
     <?php parametrespage("Administration"); ?>
 </head>
-<body>
+<body style="background-color:#0F1E38;">
     <?php navigation("administration", "."); ?>
     <section class="container mt-4">
-        <h2 class="mb-3">Administration – Gestion des membres</h2>
-        <p class="text-muted"><?php echo count($users); ?> utilisateur(s) au total.</p>
+        <h2 class="mb-3" style="color:#1D9E75;">Administration – Gestion des membres</h2>
+        <p class="text" style="color:#1D9E75;"> <?php echo count($users); ?> utilisateur(s) au total.</p>
 
         <?php if ($message): ?>
             <div class="alert alert-<?php echo $typeMsg; ?>"><?php echo htmlspecialchars($message); ?></div>
@@ -127,7 +127,7 @@ if ($recherche !== '') {
         <!-- Recherche -->
         <form method="GET" action="administration.php" class="mb-3 d-flex gap-2">
             <input type="text" class="form-control w-auto" name="recherche" placeholder="Rechercher par nom ou email..." value="<?php echo htmlspecialchars($recherche); ?>">
-            <button class="btn btn-outline-dark" type="submit">Rechercher</button>
+            <button class="btn" style="background-color: #1D9E75;" type="submit">Rechercher</button>
             <?php if ($recherche): ?>
                 <a href="administration.php" class="btn btn-outline-secondary">Réinitialiser</a>
             <?php endif; ?>
