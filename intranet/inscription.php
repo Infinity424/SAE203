@@ -2,12 +2,6 @@
 session_start();
 require_once("fonctions.php");
 
-// Accès réservé aux admins uniquement
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ./accueil.php");
-    exit();
-}
-
 $erreur = "";
 $succes = "";
 

@@ -34,6 +34,41 @@ if ($recherche !== '' && !empty($membres)) {
     });
 }
 
+// Export
+if (isset($_GET['export'])) {
+    $tousMembres = json_decode(file_get_contents($fichier), true) ?? [];
+    if ($_GET['export'] === 'csv') {
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename="annuaire_entreprise.csv"');
+        $out = fopen('php://output', 'w');
+        fprintf($out, chr(0xEF) . chr(0xBB) . chr(0xBF)); // BOM UTF-8 pour Excel
+        fputcsv($out, ['Nom', 'Service / Rôle', 'Email'], ';');
+        foreach ($tousMembres as $m) {
+            fputcsv($out, [
+                $m['utilisateur'] ?? '',
+                $m['role']        ?? '',
+                $m['email']       ?? '',
+            ], ';');
+        }
+        fclose($out);
+        exit();
+    } elseif ($_GET['export'] === 'txt') {
+        header('Content-Type: text/plain; charset=utf-8');
+        header('Content-Disposition: attachment; filename="annuaire_entreprise.txt"');
+        $ligne = str_repeat('-', 60) . "\n";
+        echo "ANNUAIRE ENTREPRISE – TechLoc\n";
+        echo "Exporté le " . date('d/m/Y à H:i') . "\n";
+        echo $ligne;
+        foreach ($tousMembres as $m) {
+            echo "Nom     : " . ($m['utilisateur'] ?? '—') . "\n";
+            echo "Service : " . ($m['role']        ?? '—') . "\n";
+            echo "Email   : " . ($m['email']       ?? '—') . "\n";
+            echo $ligne;
+        }
+        exit();
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,6 +79,15 @@ if ($recherche !== '' && !empty($membres)) {
     <?php navigation("annuaire_entreprise", "."); ?>
     <section class="container mt-4">
         <h2 class="mb-3"style="color:#1D9E75;">Annuaire – Entreprise</h2>
+        <div class="mb-3 d-flex gap-2">
+            <a href="annuaire_entreprise.php?export=csv" class="btn btn-sm fw-bold"
+            style="background-color:#1D9E75; color:white; border:none;">
+                Télécharger CSV
+            </a>
+            <a href="annuaire_entreprise.php?export=txt" class="btn btn-sm btn-outline-secondary">
+                Télécharger TXT
+            </a>
+        </div>
 
         <?php if ($message): ?>
             <div class="alert alert-warning"><?php echo htmlspecialchars($message); ?></div>

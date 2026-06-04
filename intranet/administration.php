@@ -21,7 +21,7 @@ if (!is_array($users)) {
     die("Erreur : données utilisateurs corrompues.");
 }
 
-$roles_valides = ['salarié', 'finance', 'admin', 'com'];
+$roles_valides = ['salarié', 'finance', 'admin', 'com', 'modo', 'manager'];
 
 // Modification du rôle
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'modifier_role') {
