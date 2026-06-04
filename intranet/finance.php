@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("fonctions.php");
+require_once("include/fonctions.php");
 
 $nbUtilisateurs = 0;
 $fichier = "./data/SAE203-utilisateurs.json";

@@ -30,7 +30,7 @@ function navigation($active, $racine) {
         $liens = [
         'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
         'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
-        'inscriptions'              => ['url' => $racine . '/inscription.php',            'label' => 'Inscriptions'],
+        'inscriptions'              => ['url' => $racine . '/inscription.php',            'label' => 'Inscription'],
         'administration'            => ['url' => $racine . '/administration.php',         'label' => 'Administration'],
         'communication'             => ['url' => $racine . '/communication.php',          'label' => 'Communication'],
         'finance'                   => ['url' => $racine . '/finance.php',                'label' => 'Finance'],

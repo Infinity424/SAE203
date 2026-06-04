@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("fonctions.php");
+require_once("include/fonctions.php");
 
 // Lecture du fichier pour le compteur d'utilisateur
 $nbUtilisateurs = 0;

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("fonctions.php");
+require_once("include/fonctions.php");
 
 // Accès réservé aux utilisateurs connectés
 if (!isset($_SESSION['utilisateur'])) {
