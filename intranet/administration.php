@@ -41,7 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'modif
     } else {
         $trouve = false;
         foreach ($users as &$u) {
-            if ($u['utilisateur'] === $cible) {
+            // strcasecmp renvoie 0 si les chaînes sont identiques, sans se soucier des majuscules/minuscules
+            if (strcasecmp($u['utilisateur'], $cible) === 0) {
                 $u['role'] = $nouveau_role;
                 $trouve = true;
                 break;
