@@ -317,3 +317,4 @@ function wp_temoignages_display_shortcode() {
     echo '</div>'; // Fin de la div wrap
     return ob_get_clean(); // Retourne le contenu mis en cache
 }
+?>
