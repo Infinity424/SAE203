@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("fonctions.php");
+require_once("include/fonctions.php");
 
 // Accès réservé aux admins
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
@@ -21,7 +21,7 @@ if (!is_array($users)) {
     die("Erreur : données utilisateurs corrompues.");
 }
 
-$roles_valides = ['salarié', 'finance', 'admin', 'com'];
+$roles_valides = ['salarié', 'finance', 'admin', 'com', 'modo', 'manager'];
 
 // Modification du rôle
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'modifier_role') {
@@ -41,7 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'modif
     } else {
         $trouve = false;
         foreach ($users as &$u) {
-            if ($u['utilisateur'] === $cible) {
+            // strcasecmp renvoie 0 si les chaînes sont identiques, sans se soucier des majuscules/minuscules
+            if (strcasecmp($u['utilisateur'], $cible) === 0) {
                 $u['role'] = $nouveau_role;
                 $trouve = true;
                 break;

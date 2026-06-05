@@ -4,7 +4,7 @@ session_start();
 // Détruire complètement la session
 $_SESSION = [];
 
-// Supprimer le cookie de session si présent (les cookie ont posé problème pour du debug)
+// Supprimer le cookie de session si présent (les cookie ont posé problème pour du debug)   
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(

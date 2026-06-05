@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("fonctions.php");
+require_once("include/fonctions.php");
 
 $utilisateurs = count(json_decode(file_get_contents("./data/SAE203-utilisateurs.json"), true));
 ?>

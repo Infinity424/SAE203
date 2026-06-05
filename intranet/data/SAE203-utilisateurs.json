@@ -6,6 +6,18 @@
         "role": "admin"
     },
     {
+        "utilisateur": "modo",
+        "motdepasse": "$2y$10$KdG1dYbBB63dW8rfb5\/p\/u4t97wN06VJKVHVsF\/9pSLDCNUagXSp2",
+        "email": "modo@modo.com",
+        "role": "modo"
+    },
+    {
+        "utilisateur": "manager",
+        "motdepasse": "$2y$10$KdG1dYbBB63dW8rfb5\/p\/u4t97wN06VJKVHVsF\/9pSLDCNUagXSp2",
+        "email": "manager@manager.com",
+        "role": "manager"
+    },
+    {
         "utilisateur": "Corwin",
         "motdepasse": "$2y$10$8CKbKynJIdrvbmJEJSo1Y.jAXvQjXr80pbrtq9KZiCtvROySC0Jtq",
         "email": "corwin@jspquoi.fr",
@@ -27,6 +39,54 @@
         "utilisateur": "Martin",
         "motdepasse": "$2y$10$QRfXx1QbQWMN.0gB9aN1hOB6RQl0cOdDiKdL.Y4L3M..wQ93Zqtcq",
         "email": "martin@techloc.fr",
+        "role": "salarié"
+    },
+    {
+        "utilisateur": "Nathan",
+        "motdepasse": "$2y$10$\/pd0MeSUNtd7JDcJGHYXpuACxB.kURc.L6vuh167rhd7OeZZnBasq",
+        "email": "nathan@jspquoi.fr",
+        "role": "admin"
+    },
+    {
+        "utilisateur": "Gwendal",
+        "motdepasse": "$2y$10$aId\/kWOo80XhPvF1bd99VOBQz3fqtzxbLQd5ZlrriwHGbBplUEdAK",
+        "email": "gwendal@jspquoi.fr",
+        "role": "salarié"
+    },
+    {
+        "utilisateur": "Leila",
+        "motdepasse": "$2y$10$cEtpKXSY7AS\/2yvbP.vZlOrGjcpxOkTrMzhJqnmIybuc2Zmj3rxeS",
+        "email": "leila@jspquoi.fr",
+        "role": "com"
+    },
+    {
+        "utilisateur": "Dorothée",
+        "motdepasse": "$2y$10$VW7w0MYbdXigHbAxKJOV7.P3k.kCXrfJm2MTyj7.tzS87pgeZbLHe",
+        "email": "dorothee@jspquoi.fr",
+        "role": "salarié"
+    },
+    {
+        "utilisateur": "Ehma",
+        "motdepasse": "$2y$10$C1G2\/KXvUyI0Rl7h\/.otcumPt5va9NJZBrPOmPN3.EOQo.AmB1PXC",
+        "email": "ehma@jspquoi.fr",
+        "role": "com"
+    },
+    {
+        "utilisateur": "Elon",
+        "motdepasse": "$2y$10$ObhcsrapLe5Ks\/rBJWcFGOqcgddO.jJYFlvolOTgtsZ\/zQQiPgBiq",
+        "email": "elon@jspquoi.fr",
+        "role": "salarié"
+    },
+    {
+        "utilisateur": "Celia",
+        "motdepasse": "$2y$10$TLqIx51AABIBnSU8KzVAkOmgdwk485ji9oBbL4v10swO9oSddT5yu",
+        "email": "celia@jspquoi.fr",
+        "role": "com"
+    },
+    {
+        "utilisateur": "David",
+        "motdepasse": "$2y$10$4ri7Nb13chS8LoVeU0x0f.zYJjb.eRpI.5hpM1oam8OUp3XY2zOu.",
+        "email": "david@jspquoi.fr",
         "role": "salarié"
     }
 ]
