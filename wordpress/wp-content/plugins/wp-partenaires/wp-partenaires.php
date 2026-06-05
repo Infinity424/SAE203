@@ -8,7 +8,7 @@ Author: Techlok
 
 shortcode_atts('partenaires', 'affiche_partenaire');
 function affiche_partenaire(){
-    $json_url = 'http://172.18.203.208/intranet/data/annuaire_partenaires.json';
+    $json_url = '../intranet/data/annuaire_partenaires.json';
     $response = wp_remote_get($json_url);
 
     if(is_wp_error($response)){
