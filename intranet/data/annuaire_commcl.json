@@ -4,83 +4,95 @@
         "entreprise": "Dupont & Fils SARL",
         "email": "j.dupont@dupont-fils.fr",
         "telephone": "02 23 45 67 89",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Marie Martin",
         "entreprise": "Martin Industrie",
         "email": "m.martin@martin-industrie.fr",
         "telephone": "02 23 11 22 33",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Pierre Bernard",
         "entreprise": "BTP Bernard",
         "email": "p.bernard@btp-bernard.fr",
         "telephone": "02 99 44 55 66",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Sophie Leroy",
         "entreprise": "Leroy Consulting",
         "email": "s.leroy@leroy-consulting.fr",
         "telephone": "01 44 77 88 99",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Thomas Moreau",
         "entreprise": "Moreau Logistics",
         "email": "t.moreau@moreau-logistics.fr",
         "telephone": "03 20 12 34 56",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Isabelle Petit",
         "entreprise": "Petit Négoce",
         "email": "i.petit@petit-negoce.fr",
         "telephone": "04 72 98 76 54",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Nicolas Richard",
         "entreprise": "Richard Technologies",
         "email": "n.richard@richard-tech.fr",
         "telephone": "01 55 33 22 11",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Camille Simon",
         "entreprise": "Simon & Associés",
         "email": "c.simon@simon-associes.fr",
         "telephone": "02 40 65 43 21",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "François Girard",
         "entreprise": "Girard Menuiserie",
         "email": "f.girard@girard-menuiserie.fr",
         "telephone": "05 56 78 90 12",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Aurélie Lambert",
         "entreprise": "Lambert Distribution",
         "email": "a.lambert@lambert-distrib.fr",
         "telephone": "03 88 11 99 77",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Julien Fontaine",
         "entreprise": "Fontaine Électricité",
         "email": "j.fontaine@fontaine-elec.fr",
         "telephone": "02 51 23 45 67",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     },
     {
         "nom": "Céline Rousseau",
         "entreprise": "Rousseau Immobilier",
         "email": "c.rousseau@rousseau-immo.fr",
         "telephone": "04 91 34 56 78",
-        "detail": "Bonjour"
+        "detail": "Bonjour",
+        "logo": ".\/img\/img.png"
     }
 ]
