@@ -3,54 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki</title>
+    <title>Wiki — SAE203</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body class="p-3">
-    <div>
-        <h1>Wiki de notre site web</h1>
-        <h2>Architecture du projet</h2>
-        <p>
-            template pour raphael (en charge de l'Architecture du site)
-            <pre class="bg-light m-3 p-1 rounded border"><code>
-    /                          ← Racine du site
-    ├── accueil.php            ← Page d'accueil (stats)
-    ├── connexion.php          ← Formulaire de connexion
-    ├── connexion_traitement.php ← Traitement POST connexion
-    ├── deconnexion.php        ← Destruction de session + redirect
-    ├── inscription.php        ← Création de compte
-    ├── administration.php     ← Gestion des utilisateurs (admin) sinon retour a l'accueil
-    ├── profil.php             ← Édition du profil utilisateur
-    ├── visualiser.php         ← Liste brute de toutes les annonces
-    ├── proposer.php           ← Formulaire d'ajout d'annonce
-    ├── modifier.php           ← Modification / suppression d'annonces
-    ├── rechercher.php         ← Recherche filtrée + inscription
-    ├── calendar.php           ← Calendrier des trajets de l'utilisateur
-    ├── wiki.php               ← Cette page
-    │
-    ├── /admin/
-    │   ├── view_utilsateurs.php  ← Dump brut des utilisateurs JSON
-    │   └── view_annonces.php     ← Dump brut des annonces JSON
-    │
-    ├── /data/
-    │   ├── r209-tp_utilisateurs.json
-    │   └── r209-tp_annonces.json
-    │
-    ├── /images/               ← Photos de profil (pseudo.ext)
-    │
-    └── /scripts/
-        ├── fonctions.php      ← Toutes les fonctions PHP communes
-        └── update-annonce.js  ← Script JS (prévu pour Fetch API)</code></pre>
-            </p>
-        <h2>Descrition des fonctiannalités</h2>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, odit possimus ullam ipsam ab tempore vel rerum voluptatem suscipit accusamus ea quisquam quo eaque reprehenderit! Deleniti facere cumque quo atque?
-        </p>
-        <h2>Liste des identifiants et mots de passe nécessaire</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio aut illum natus, iste animi molestias, aliquid facilis totam provident nemo dicta, eligendi consectetur? Itaque omnis, vitae illum sed doloribus praesentium?
-        </p>
+<body class="p-4">
+
+    <h1 class="mb-2">Wiki du projet SAE203</h1>
+    <p class="text-muted">Accessible à tous les visiteurs sans connexion. Documente l'architecture, les fonctionnalités et les identifiants du projet.</p>
+
+    <hr>
+
+    <h2>1. Architecture du projet</h2>
+    <p>Le projet est hébergé dans <code>/var/www/html/SAE203/</code> (DocumentRoot Apache). Il est composé de deux parties : un <strong>intranet HTML/PHP</strong> et un <strong>site vitrine WordPress</strong>.</p>
+
+    <pre class="bg-light border rounded p-3">
+/                               &lt;- Racine du serveur (DocumentRoot Apache)
+├── index.html                  &lt;- Page d'accueil racine
+├── infos.html
+├── wiki.html                   &lt;- Cette page (accessible sans connexion)
+│
+├── /intranet/                  &lt;- Application intranet (accès privé)
+│   ├── accueil.php             &lt;- Dashboard principal (session requise)
+│   ├── connexion.php           &lt;- Formulaire de connexion
+│   ├── connexion_traitement.php &lt;- Traitement POST de la connexion
+│   ├── deconnexion.php         &lt;- Destruction de session + redirection
+│   ├── inscription.php         &lt;- Création de compte utilisateur
+│   ├── administration.php      &lt;- Gestion des utilisateurs (rôle admin requis)
+│   ├── profil.php              &lt;- Édition du profil utilisateur
+│   ├── annuaire_clients.php    &lt;- Annuaire des clients
+│   ├── annuaire_entreprise.php &lt;- Annuaire des entreprises
+│   ├── annuaire_partenaires.php &lt;- Annuaire des partenaires
+│   ├── communication.php       &lt;- Module de communication interne
+│   ├── finance.php             &lt;- Module finance (achats clients)
+│   ├── offre.php               &lt;- Gestion des offres
+│   │
+│   ├── /assets/                &lt;- Répertoire des styles
+│   │   └── style.css           &lt;- Feuille de style de l'intranet
+│   │
+│   ├── /data/                  &lt;- Données JSON
+│   │   ├── SAE203-utilisateurs.json    &lt;- Comptes utilisateurs
+│   │   ├── annuaire_clients.json   
+│   │   ├── annuaire_partenaires.json
+│   │   ├── annuaire_commcl.json    &lt;- Annuaire Clients pôle Communication
+│   │   ├── annuaire_commpar.json    &lt;- Annuaire Partenaires pôle Communication
+│   │   ├── achats_clients.json    &lt;- BDD pôle Finance
+│   │   └── temoignages.json    &lt;- BDD Témoignages
+│   │
+│   ├── /erreurs/               &lt;- Pages d'erreur Apache personnalisées
+│   │   ├── 403.html
+│   │   ├── 404.html
+│   │   ├── 500.html
+│   │   └── 503.html
+│   │
+│   ├── /img/                      &lt;- Images du site
+│   │   ├── logo.png               &lt;- Logo de la page
+│   │   └── img.png                &lt;- Image upload logo entreprise /clients
+│   │
+│   └── /include/
+│       └── fonctions.php       &lt;- Fonctions PHP communes
+│
+└── /wordpress/                 &lt;- Site vitrine public (WordPress)
+    ├── index.php               &lt;- Point d'entrée WordPress
+    ├── wp-login.php            &lt;- Connexion administration WordPress
+    ├── wp-config.php           &lt;- Configuration BDD (non versionné sur Git !)
+    ├── wp-settings.php
+    ├── /wp-admin/              &lt;- Interface d'administration WordPress
+    ├── /wp-content/            &lt;- Thèmes, plugins et médias (seule partie à modifier)
+    └── /wp-includes/           &lt;- Coeur WordPress (ne pas modifier)
+    </pre>
+
+    <hr>
+
+    <h2>2. Description des fonctionnalités</h2>
+    <br>
+    <h3>2.1 Site vitrine — WordPress</h3>
+    <p>Accessible à l'adresse : <code>http://172.18.203.208/wordpress/</code></p>
+    <ul>
+        <li>Site de présentation de l'entreprise</li>
+        <li>Contenu géré via l'interface d'administration WordPress</li>
+        <li>Thème personnalisable via <code>/wp-content/themes/</code></li>
+        <li>Plugins installables via <code>/wp-content/plugins/</code></li>
+    </ul>
+
+    <br>
+
+    <h3>2.2 Intranet — HTML/BOOTSTRAP/CSS/PHP </h3>
+    <p>Accessible à l'adresse : <code>http://172.18.203.208/intranet/connexion.php</code></p>
+    <ul>
+        <li><strong>Authentification</strong> : connexion par identifiant et mot de passe, session PHP, déconnexion</li>
+        <li><strong>Inscription</strong> : création d'un compte utilisateur (écriture dans le fichier JSON)</li>
+        <li><strong>Dashboard</strong> : page d'accueil avec statistiques (nombre d'utilisateurs, équipements)</li>
+        <li><strong>Annuaires</strong> : consultation des clients, entreprises et partenaires</li>
+        <li><strong>Finance</strong> : consultation des achats clients</li>
+        <li><strong>Communication</strong> : module de communication interne</li>
+        <li><strong>Offres</strong> : gestion et consultation des offres de l'entreprise</li>
+        <li><strong>Profil</strong> : modification des informations personnelles du compte connecté</li>
+        <li><strong>Administration</strong> : gestion des comptes utilisateurs, accessible uniquement aux administrateurs</li>
+    </ul>
+
+    <br>
+
+    <h3>2.3 Réécriture d'URL</h3>
+    <p>Le serveur Apache est configuré avec une règle de réécriture d'URL. Une URL de la forme <code>/valeur1/valeur2</code> est automatiquement réécrite en <code>index.php?param1=valeur1&amp;param2=valeur2</code>. Cette règle est déclarée directement dans <code>SAE203.conf</code> (pas de fichier <code>.htaccess</code>).</p>
+
+    <br>
+
+    <h3>2.4 Pages d'erreur personnalisées</h3>
+    <p>Les erreurs HTTP (403, 404, 500, 503) affichent des pages HTML personnalisées déclarées dans la configuration Apache, sans rediriger l'URL.</p>
+    <hr>
+
+    <br>
+    <h2>3. Liste des identifiants et mots de passe</h2>
+
+    <br>
+
+    <h3>3.1 Intranet</h3>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Rôle</th>
+                <th>Identifiant</th>
+                <th>Mot de passe</th>
+                <th>URL de connexion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Administrateur</td>
+                <td>admin</td>
+                <td>motdepasse</td>
+                <td><code>/intranet/connexion.php</code></td>
+            </tr>
+            <tr>
+                <td>Modérateur</td>
+                <td>modo</td>
+                <td>motdepasse</td>
+                <td><code>/intranet/connexion.php</code></td>
+            </tr>
+            <tr>
+                <td>Manager</td>
+                <td>manager</td>
+                <td>motdepasse</td>
+                <td><code>/intranet/connexion.php</code></td>
+            </tr>
+            <tr>
+                <td>Corwin (Finance)</td>
+                <td>Corwin</td>
+                <td>azerty</td>
+                <td><code>/intranet/connexion.php</code></td>
+            </tr>
+            <tr>
+                <td>Jean-Baptiste (salarié)</td>
+                <td>Jean-Baptiste</td>
+                <td>azerty</td>
+                <td><code>/intranet/connexion.php</code></td>
+            </tr>
+            <tr>
+                <td>Raphaël (communication)</td>
+                <td>Raphaël</td>
+                <td>azerty</td>
+                <td><code>/intranet/connexion.php</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <h3>3.2 WordPress</h3>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Rôle</th>
+                <th>Identifiant</th>
+                <th>Mot de passe</th>
+                <th>URL de connexion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Administrateur WordPress</td>
+                <td>user</td>
+                <td>AsefThu3</td>
+                <td><code>/wordpress/wp-admin/</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <hr>
+
+    <h2 id="roles" class="mb-3">4. Système de rôles et droits d'accès</h2>
+    <div class="card shadow-sm mb-5">
+        <div class="card-body table-responsive">
+            <table class="table table-bordered text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-start">Accès / Pages</th>
+                        <th>Visiteur</th>
+                        <th>Salarié</th>
+                        <th>Com</th>
+                        <th>Finance</th>
+                        <th>Manager</th>
+                        <th>Modo</th>
+                        <th>Admin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-start">Accéder à l'Accueil (<code>accueil.php</code>)</td>
+                        <td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Gérer son profil (<code>profil.php</code>)</td>
+                        <td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Consulter les annuaires (Clients, Entreprise, Partenaires)</td>
+                        <td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Accéder au module Communication (<code>communication.php</code>)</td>
+                        <td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Accéder au module Finance (<code>finance.php</code>)</td>
+                        <td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Gérer les inscriptions (<code>inscription.php</code>)</td>
+                        <td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="text-start">Accéder à l'Administration (<code>administration.php</code>)</td>
+                        <td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-muted small mb-0 mt-2">La vérification des droits est faite en PHP côté serveur via <code>$_SESSION['role']</code>. La barre de navigation s'adapte dynamiquement selon le rôle détecté.</p>
+        </div>
     </div>
+
 </body>
 </html>
