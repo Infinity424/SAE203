@@ -6,18 +6,6 @@
         "telephone": "02 23 45 67 89"
     },
     {
-        "nom": "Marie Matin",
-        "entreprise": "Martin Industrie",
-        "email": "m.martin@martin-industrie.fr",
-        "telephone": "02 23 11 22 33"
-    },
-    {
-        "nom": "Pierre Bernard",
-        "entreprise": "BTP Bernard",
-        "email": "p.bernard@btp-bernard.fr",
-        "telephone": "02 99 44 55 66"
-    },
-    {
         "nom": "Sophie Leroy",
         "entreprise": "Leroy Consulting",
         "email": "s.leroy@leroy-consulting.fr",
@@ -118,6 +106,30 @@
         "entreprise": "Joly Événementiel",
         "email": "m.joly@joly-events.fr",
         "telephone": "05 49 66 77 88"
+    },
+    {
+        "nom": "Clément Hubert",
+        "entreprise": "Hubert Solutions Web",
+        "email": "c.hubert@hubert-web.fr",
+        "telephone": "02 41 22 33 44"
+    },
+    {
+        "nom": "Audrey Gautier",
+        "entreprise": "Gautier Prêt-à-Porter",
+        "email": "a.gautier@gautier-fashion.fr",
+        "telephone": "01 48 99 00 11"
+    },
+    {
+        "nom": "Clément Hubert",
+        "entreprise": "Hubert Solutions Web",
+        "email": "c.hubert@hubert-web.fr",
+        "telephone": "02 41 22 33 44"
+    },
+    {
+        "nom": "Audrey Gautier",
+        "entreprise": "Gautier Prêt-à-Porter",
+        "email": "a.gautier@gautier-fashion.fr",
+        "telephone": "01 48 99 00 11"
     },
     {
         "nom": "Clément Hubert",
