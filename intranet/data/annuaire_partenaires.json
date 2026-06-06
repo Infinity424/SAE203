@@ -4,90 +4,77 @@
         "secteur": "Fournitures industrielles",
         "contact": "Robert Duchemin",
         "email": "r.duchemin@acme-corp.fr",
-        "telephone": "01 23 45 67 89"
+        "telephone": "01 23 45 67 89",
+        "detail": "Bonjour",
+        "logo": "./img/img.png",
+        "descritption": "Leader dans la distribution de composants mécaniques et de fournitures pour les professionnels de l'industrie."
     },
     {
         "nom": "InfoSys Solutions",
         "secteur": "Logiciels & Télécom",
         "contact": "Sandra Blanc",
         "email": "s.blanc@infosys-solutions.fr",
-        "telephone": "03 21 98 76 54"
+        "telephone": "03 21 98 76 54",
+        "detail": "Bonjour",
+        "logo": "./img/img.png",
+        "descritption": "Éditeur de logiciels de gestion sur mesure et intégrateur de solutions réseaux pour les entreprises."
     },
     {
         "nom": "TransExpress",
         "secteur": "Transport & Logistique",
         "contact": "Marc Legrand",
         "email": "m.legrand@transexpress.fr",
-        "telephone": "02 40 11 22 33"
+        "telephone": "02 40 11 22 33",
+        "detail": "Bonjour",
+        "logo": "./img/img.png",
+        "descritption": "Spécialiste du transport express national et de la gestion de chaîne logistique sécurisée."
     },
     {
         "nom": "EcoEnergie",
         "secteur": "Énergie renouvelable",
         "contact": "Lucie Vidal",
         "email": "l.vidal@ecoenergie.fr",
-        "telephone": "04 67 44 55 66"
+        "telephone": "04 67 44 55 66",
+        "detail": "Bonjour",
+        "logo": "./img/img.png",
+        "descritption": "Expert en installation de panneaux photovoltaïques et en solutions d'optimisation énergétique durable."
     },
     {
         "nom": "Bâti Pro",
         "secteur": "Bâtiment & Travaux",
         "contact": "Patrick Renaud",
         "email": "p.renaud@bati-pro.fr",
-        "telephone": "05 61 77 88 99"
+        "telephone": "05 61 77 88 99",
+        "detail": "Bonjour",
+        "logo": "./img/img.png",
+        "descritption": "Entreprise générale du bâtiment spécialisée dans la rénovation thermique et le gros œuvre."
     },
     {
         "nom": "Médiapub",
         "secteur": "Publicité & Marketing",
         "contact": "Julie Caron",
         "email": "j.caron@mediapub.fr",
-        "telephone": "01 42 33 44 55"
+        "telephone": "01 42 33 44 55",
+        "detail": "Bonjour",
+        "logo": "./img/img.png",
+        "descritption": "Agence conseil en communication globale, stratégie digitale et création d'identités visuelles."
     },
     {
         "nom": "SécuriNet",
         "secteur": "Cybersécurité",
         "contact": "Olivier Faure",
         "email": "o.faure@securinet.fr",
-        "telephone": "03 59 66 77 88"
+        "telephone": "03 59 66 77 88",
+        "detail": "Bonjour",
+        "logo": "./img/img.png",
+        "descritption": "Fournisseur de solutions d'audit de sécurité, de protection de serveurs et de formation aux cybermenaces."
     },
     {
         "nom": "CloudStock",
         "secteur": "Hébergement & Cloud",
         "contact": "Anaïs Lemaire",
         "email": "a.lemaire@cloudstock.fr",
-        "telephone": "02 28 55 44 33"
-    },
-    {
-        "nom": "FormaPro",
-        "secteur": "Formation professionnelle",
-        "contact": "Stéphane Bouchard",
-        "email": "s.bouchard@formapro.fr",
-        "telephone": "04 78 99 00 11"
-    },
-    {
-        "nom": "JuriConseil",
-        "secteur": "Cabinet juridique",
-        "contact": "Nathalie Picard",
-        "email": "n.picard@juriconseil.fr",
-        "telephone": "01 56 22 33 44"
-    },
-    {
-        "nom": "ImprimTout",
-        "secteur": "Imprimerie & Edition",
-        "contact": "Didier Marchand",
-        "email": "d.marchand@imprimtout.fr",
-        "telephone": "03 27 88 77 66"
-    },
-    {
-        "nom": "NetClean",
-        "secteur": "Nettoyage & Services",
-        "contact": "Valérie Schmitt",
-        "email": "v.schmitt@netclean.fr",
-        "telephone": "02 97 33 22 11"
-    },
-    {
-        "nom": "FinancePlus",
-        "secteur": "Banque & Assurance",
-        "contact": "Christophe Vasseur",
-        "email": "c.vasseur@financeplus.fr",
-        "telephone": "04 93 44 55 66"
-    }
-]
+        "telephone": "02 28 55 44 33",
+        "detail": "Bonjour",
+        "logo": "./img/img.png",
+        "descritption": "Infrastructures cloud hautement sécurisées et services d'hébergement pour les entreprises de toutes tailles."
