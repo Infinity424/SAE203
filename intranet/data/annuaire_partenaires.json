@@ -6,7 +6,7 @@
         "email": "r.duchemin@acme-corp.fr",
         "telephone": "01 23 45 67 89",
         "detail": "Bonjour",
-        "logo": "./img/img.png",
+        "logo": "/SAE203/intranet/img/img.png",
         "descritption": "Leader dans la distribution de composants mécaniques et de fournitures pour les professionnels de l'industrie."
     },
     {
@@ -16,7 +16,7 @@
         "email": "s.blanc@infosys-solutions.fr",
         "telephone": "03 21 98 76 54",
         "detail": "Bonjour",
-        "logo": "/img/img.png",
+        "logo": "/SAE203/intranet/img/img.png",
         "descritption": "Éditeur de logiciels de gestion sur mesure et intégrateur de solutions réseaux pour les entreprises."
     },
     {
@@ -26,7 +26,7 @@
         "email": "m.legrand@transexpress.fr",
         "telephone": "02 40 11 22 33",
         "detail": "Bonjour",
-        "logo": "./img/img.png",
+        "logo": "/SAE203/intranet/img/img.png",
         "descritption": "Spécialiste du transport express national et de la gestion de chaîne logistique sécurisée."
     },
     {
@@ -36,7 +36,7 @@
         "email": "l.vidal@ecoenergie.fr",
         "telephone": "04 67 44 55 66",
         "detail": "Bonjour",
-        "logo": "./img/img.png",
+        "logo": "/SAE203/intranet/img/img.png",
         "descritption": "Expert en installation de panneaux photovoltaïques et en solutions d'optimisation énergétique durable."
     },
     {
@@ -46,7 +46,7 @@
         "email": "p.renaud@bati-pro.fr",
         "telephone": "05 61 77 88 99",
         "detail": "Bonjour",
-        "logo": "./img/img.png",
+        "logo": "/SAE203/intranet/img/img.png",
         "descritption": "Entreprise générale du bâtiment spécialisée dans la rénovation thermique et le gros œuvre."
     },
     {
@@ -56,7 +56,7 @@
         "email": "j.caron@mediapub.fr",
         "telephone": "01 42 33 44 55",
         "detail": "Bonjour",
-        "logo": "./img/img.png",
+        "logo": "/SAE203/intranet/img/img.png",
         "descritption": "Agence conseil en communication globale, stratégie digitale et création d'identités visuelles."
     },
     {
@@ -66,7 +66,7 @@
         "email": "o.faure@securinet.fr",
         "telephone": "03 59 66 77 88",
         "detail": "Bonjour",
-        "logo": "./img/img.png",
+        "logo": "/SAE203/intranet/img/img.png",
         "descritption": "Fournisseur de solutions d'audit de sécurité, de protection de serveurs et de formation aux cybermenaces."
     },
     {
@@ -76,7 +76,7 @@
         "email": "a.lemaire@cloudstock.fr",
         "telephone": "02 28 55 44 33",
         "detail": "Bonjour",
-        "logo": "./img/img.png",
+        "logo": "/SAE203/intranet/img/img.png",
         "descritption": "Infrastructures cloud hautement sécurisées et services d'hébergement pour les entreprises de toutes tailles."
     }
 ]
