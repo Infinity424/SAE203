@@ -45,7 +45,6 @@ foreach ($json as $user) {
             $utilisateurConnecte = $user;
             break;
         }
-        // Utilisateur trouvé mais mauvais mot de passe on sort pour éviter de continuer à itérer inutilement
         break;
     }
 }
@@ -58,9 +57,17 @@ if ($utilisateurConnecte === null) {
 // Regénérer l'ID de session pour prévenir la fixation de session
 session_regenerate_id(true);
 
+// Normalisation du champ "role" : toujours stocker un tableau en session
+$roleJSON = $utilisateurConnecte['role'] ?? 'salarié';
+if (is_array($roleJSON)) {
+    $roles = array_values(array_unique(array_filter(array_map('trim', $roleJSON))));
+} else {
+    $roles = array_values(array_unique(array_filter(array_map('trim', explode(',', $roleJSON)))));
+}
+
 // Création des variables de session
 $_SESSION['utilisateur'] = $utilisateurConnecte['utilisateur'];
-$_SESSION['role']        = $utilisateurConnecte['role'];
+$_SESSION['role']        = $roles;   // <= tableau
 $_SESSION['email']       = $utilisateurConnecte['email'] ?? '';
 
 header("Location: ./accueil.php");

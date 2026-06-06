@@ -3,7 +3,7 @@ session_start();
 require_once("include/fonctions.php");
 
 // Accès réservé aux utilisateurs connectés
-if (!isset($_SESSION['utilisateur'])) {
+if (!estConnecte()) {
     header("Location: ./connexion.php");
     exit();
 }
@@ -32,7 +32,6 @@ foreach ($users as $i => $u) {
 }
 
 if ($userIndex === null) {
-    // L'utilisateur en session n'existe plus dans le JSON
     session_destroy();
     header("Location: ./connexion.php?erreur=session");
     exit();
@@ -70,6 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 }
 
 $userActuel = $users[$userIndex];
+
+// Normalisation des rôles pour l'affichage
+$rolesAffichage = $userActuel['role'] ?? ['salarié'];
+if (is_string($rolesAffichage)) {
+    $rolesAffichage = array_filter(array_map('trim', explode(',', $rolesAffichage)));
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -78,7 +83,7 @@ $userActuel = $users[$userIndex];
 </head>
 <body style="background-color:#0F1E38;">
     <?php navigation("profil", "."); ?>
-    <section class="container mt-4" >
+    <section class="container mt-4">
         <h2 class="mb-3" style="color:#1D9E75;">Mon profil – <?php echo htmlspecialchars($pseudo); ?></h2>
 
         <?php if ($message): ?>
@@ -93,7 +98,12 @@ $userActuel = $users[$userIndex];
                         <h5 class="card-title">Informations</h5>
                         <p><strong>Nom :</strong> <?php echo htmlspecialchars($userActuel['utilisateur']); ?></p>
                         <p><strong>Email :</strong> <?php echo htmlspecialchars($userActuel['email'] ?? '—'); ?></p>
-                        <p><strong>Rôle :</strong> <span class="badge bg-secondary"><?php echo htmlspecialchars($userActuel['role']); ?></span></p>
+                        <p>
+                            <strong>Rôle(s) :</strong>
+                            <?php foreach ($rolesAffichage as $r): ?>
+                                <span class="badge bg-secondary me-1"><?php echo htmlspecialchars($r); ?></span>
+                            <?php endforeach; ?>
+                        </p>
                     </div>
                 </div>
             </div>

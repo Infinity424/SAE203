@@ -24,13 +24,55 @@ if (!file_exists($fichier)) {
     }
 }
 
+// Map : page/fonctionnalité → rôles qui y ont accès
+// Doit rester synchronisée avec $droitsParRole dans fonctions.php
+$accesParPage = [
+    'accueil'              => ['admin', 'manager', 'modo', 'com', 'finance', 'salarié'],
+    'profil'               => ['admin', 'manager', 'modo', 'com', 'finance', 'salarié'],
+    'inscription'          => ['admin', 'manager'],
+    'administration'       => ['admin'],
+    'communication'        => ['admin', 'manager', 'modo', 'com'],
+    'finance'              => ['admin', 'manager', 'modo', 'finance'],
+    'annuaire_clients'     => ['admin', 'manager', 'modo', 'com', 'finance', 'salarié'],
+    'annuaire_entreprise'  => ['admin', 'manager', 'modo', 'com', 'finance', 'salarié'],
+    'annuaire_partenaires' => ['admin', 'manager', 'modo', 'com', 'finance', 'salarié'],
+];
+
+/**
+ * Retourne true si au moins un des rôles du membre donne accès
+ * à une page/fonctionnalité dont le nom contient $recherche.
+ */
+function membreMatcheRecherche(array $rolesUser, string $recherche, array $accesParPage): bool {
+    foreach ($accesParPage as $page => $rolesAutorises) {
+        // La recherche correspond-elle à cette page/fonctionnalité ?
+        if (stripos($page, $recherche) !== false) {
+            // Le membre a-t-il l'un des rôles autorisés pour cette page ?
+            foreach ($rolesUser as $r) {
+                if (in_array($r, $rolesAutorises, true)) return true;
+            }
+        }
+    }
+    return false;
+}
+
 // Recherche
 $recherche = trim($_GET['recherche'] ?? '');
 if ($recherche !== '' && !empty($membres)) {
-    $membres = array_filter($membres, function($m) use ($recherche) {
-        return stripos($m['utilisateur']        ?? '', $recherche) !== false
-            || stripos($m['role']      ?? '', $recherche) !== false
-            || stripos($m['email']      ?? '', $recherche) !== false;
+    $membres = array_filter($membres, function($m) use ($recherche, $accesParPage) {
+        $r = $m['role'] ?? '';
+        $rolesUser = is_array($r) ? $r : array_filter(array_map('trim', explode(',', $r)));
+
+        // 1. Recherche par nom ou email
+        if (stripos($m['utilisateur'] ?? '', $recherche) !== false) return true;
+        if (stripos($m['email']       ?? '', $recherche) !== false) return true;
+
+        // 2. Recherche par rôle exact
+        foreach ($rolesUser as $role) {
+            if (stripos($role, $recherche) !== false) return true;
+        }
+
+        // 3. Recherche par page/droit d'accès
+        return membreMatcheRecherche($rolesUser, $recherche, $accesParPage);
     });
 }
 
@@ -46,7 +88,7 @@ if (isset($_GET['export'])) {
         foreach ($tousMembres as $m) {
             fputcsv($out, [
                 $m['utilisateur'] ?? '',
-                $m['role']        ?? '',
+                is_array($m['role'] ?? '') ? implode(', ', $m['role']) : ($m['role'] ?? ''),
                 $m['email']       ?? '',
             ], ';');
         }
@@ -61,7 +103,7 @@ if (isset($_GET['export'])) {
         echo $ligne;
         foreach ($tousMembres as $m) {
             echo "Nom     : " . ($m['utilisateur'] ?? '—') . "\n";
-            echo "Service : " . ($m['role']        ?? '—') . "\n";
+            echo "Service : " . (is_array($m['role'] ?? '') ? implode(', ', $m['role']) : ($m['role'] ?? '—')) . "\n";
             echo "Email   : " . ($m['email']       ?? '—') . "\n";
             echo $ligne;
         }
@@ -119,7 +161,15 @@ if (isset($_GET['export'])) {
             <?php foreach ($membres as $m): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($m['utilisateur']       ?? '—'); ?></td>
-                    <td><?php echo htmlspecialchars($m['role']   ?? '—'); ?></td>
+                    <td>
+                        <?php
+                        $r = $m['role'] ?? '—';
+                        $roles = is_array($r) ? $r : array_filter(array_map('trim', explode(',', $r)));
+                        foreach ($roles as $badge) {
+                            echo '<span class="badge bg-secondary me-1">' . htmlspecialchars($badge) . '</span>';
+                        }
+                        ?>
+                    </td>
                     <td><?php echo htmlspecialchars($m['email']     ?? '—'); ?></td>
                 </tr>
             <?php endforeach; ?>

@@ -9,7 +9,9 @@
         "utilisateur": "modo",
         "motdepasse": "$2y$10$KdG1dYbBB63dW8rfb5\/p\/u4t97wN06VJKVHVsF\/9pSLDCNUagXSp2",
         "email": "modo@modo.com",
-        "role": "modo"
+        "role": [
+            "com"
+        ]
     },
     {
         "utilisateur": "manager",
@@ -21,7 +23,10 @@
         "utilisateur": "Corwin",
         "motdepasse": "$2y$10$8CKbKynJIdrvbmJEJSo1Y.jAXvQjXr80pbrtq9KZiCtvROySC0Jtq",
         "email": "corwin@jspquoi.fr",
-        "role": "finance"
+        "role": [
+            "finance",
+            "com"
+        ]
     },
     {
         "utilisateur": "Jean-Baptiste",
@@ -45,13 +50,18 @@
         "utilisateur": "Nathan",
         "motdepasse": "$2y$10$\/pd0MeSUNtd7JDcJGHYXpuACxB.kURc.L6vuh167rhd7OeZZnBasq",
         "email": "nathan@jspquoi.fr",
-        "role": "admin"
+        "role": [
+            "finance",
+            "admin"
+        ]
     },
     {
         "utilisateur": "Gwendal",
         "motdepasse": "$2y$10$aId\/kWOo80XhPvF1bd99VOBQz3fqtzxbLQd5ZlrriwHGbBplUEdAK",
         "email": "gwendal@jspquoi.fr",
-        "role": "salarié"
+        "role": [
+            "finance"
+        ]
     },
     {
         "utilisateur": "Leila",

@@ -2,6 +2,12 @@
 session_start();
 require_once("include/fonctions.php");
 
+// Accès réservé aux rôles ayant la communication
+if (!estConnecte() || !hasRole('admin', 'manager', 'modo', 'com')) {
+    header("Location: ./accueil.php");
+    exit();
+}
+
 // Lecture du fichier pour le compteur d'utilisateur
 $nbUtilisateurs = 0;
 $fichier = "./data/SAE203-utilisateurs.json";
@@ -106,10 +112,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php parametrespage("Mon profil"); ?>
+    <?php parametrespage("Communication"); ?>
 </head>
 <body style="background-color:#0F1E38;">
-    <?php navigation("profil", "."); ?>
+    <?php navigation("communication", "."); ?>
     <?php
          $type = $_GET['type'] ?? '';
     ?>
