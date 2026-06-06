@@ -2,7 +2,6 @@
 session_start();
 require_once("include/fonctions.php");
 
-<<<<<<< HEAD
 // Accès réservé aux rôles ayant la communication
 if (!estConnecte() || !hasRole('admin', 'manager', 'modo', 'com')) {
     header("Location: ./accueil.php");
@@ -10,8 +9,6 @@ if (!estConnecte() || !hasRole('admin', 'manager', 'modo', 'com')) {
 }
 
 // Lecture du fichier pour le compteur d'utilisateur
-=======
->>>>>>> 16bf44278d6b3d902604c5687b115546de24af15
 $nbUtilisateurs = 0;
 $fichier = "./data/SAE203-utilisateurs.json";
 if (file_exists($fichier)) {
