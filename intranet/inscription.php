@@ -3,7 +3,7 @@ session_start();
 require_once("include/fonctions.php");
 
 // Accès réservé aux admins
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+if (!hasRole('admin')) {
     header("Location: ./accueil.php");
     exit();
 }
