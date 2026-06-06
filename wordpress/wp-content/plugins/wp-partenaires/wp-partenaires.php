@@ -9,7 +9,7 @@ Author: Techlok
 add_shortcode('partenaires', 'affiche_partenaire');
 
 function affiche_partenaire(){
-    $json_url = ABSPATH . 'intranet/data/annuaire_partenaires.json';
+    $json_url = dirname(ABSPATH) . '/intranet/data/annuaire_partenaires.json';
 
     if(!file_exists($json_url)){
         return 'Erreur : Le fichier annuaire_partenaires.json est introuvable.';
