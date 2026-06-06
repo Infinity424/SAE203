@@ -21,12 +21,18 @@
     },
     {
         "utilisateur": "Corwin",
+<<<<<<< HEAD
         "motdepasse": "$2y$10$8CKbKynJIdrvbmJEJSo1Y.jAXvQjXr80pbrtq9KZiCtvROySC0Jtq",
         "email": "corwin@jspquoi.fr",
         "role": [
             "finance",
             "com"
         ]
+=======
+        "motdepasse": "$2y$10$VnC\/qrXlFgSQT71\/EaV9oeXTDCDetIeF6ET532gMPXQINIWtgw6na",
+        "email": "corwin@techloc.fr",
+        "role": "finance"
+>>>>>>> 16bf44278d6b3d902604c5687b115546de24af15
     },
     {
         "utilisateur": "Jean-Baptiste",

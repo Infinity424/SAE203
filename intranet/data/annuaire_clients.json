@@ -6,7 +6,7 @@
         "telephone": "02 23 45 67 89"
     },
     {
-        "nom": "Marie Martin",
+        "nom": "Marie Matin",
         "entreprise": "Martin Industrie",
         "email": "m.martin@martin-industrie.fr",
         "telephone": "02 23 11 22 33"
@@ -70,18 +70,6 @@
         "entreprise": "Rousseau Immobilier",
         "email": "c.rousseau@rousseau-immo.fr",
         "telephone": "04 91 34 56 78"
-    },
-    {
-        "nom": "Lucas Dubois",
-        "entreprise": "Dubois Espaces Verts",
-        "email": "l.dubois@dubois-jardin.fr",
-        "telephone": "02 47 88 12 34"
-    },
-    {
-        "nom": "Élodie Mercier",
-        "entreprise": "Mercier Communication",
-        "email": "e.mercier@mercier-com.fr",
-        "telephone": "01 42 55 66 77"
     },
     {
         "nom": "Antoine Roux",

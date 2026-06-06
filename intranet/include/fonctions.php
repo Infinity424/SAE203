@@ -105,10 +105,73 @@ function navigation($active, $racine) {
     echo '<div class="collapse navbar-collapse" id="navbarNav">';
     echo '<ul class="navbar-nav me-auto">';
 
+<<<<<<< HEAD
+=======
+    // 1 navbarre pour chaque role
+    if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
+        $liens = [
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'inscriptions'              => ['url' => $racine . '/inscription.php',            'label' => 'Inscription'],
+        'administration'            => ['url' => $racine . '/administration.php',         'label' => 'Administration'],
+        'communication'             => ['url' => $racine . '/communication.php',          'label' => 'Communication'],
+        'finance'                   => ['url' => $racine . '/finance.php',                'label' => 'Finance'],
+        ];
+    }elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'modo') {
+        $liens = [
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'communication'             => ['url' => $racine . '/communication.php',          'label' => 'Communication'],
+        'finance'                   => ['url' => $racine . '/finance.php',                'label' => 'Finance'],
+        ];
+    }elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'manager') {
+        $liens = [
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'inscriptions'              => ['url' => $racine . '/inscription.php',            'label' => 'Inscriptions'],
+        'communication'             => ['url' => $racine . '/communication.php',          'label' => 'Communication'],
+        'finance'                   => ['url' => $racine . '/finance.php',                'label' => 'Finance'],
+        ];
+    }elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'com') {
+        $liens = [
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'communication'             => ['url' => $racine . '/communication.php',          'label' => 'Communication'],
+        ];
+    }elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'finance') {
+        $liens = [
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        'finance'                   => ['url' => $racine . '/finance.php',                'label' => 'Finance'],
+        ];
+    }elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'salarié') {
+        $liens = [  
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        'profil'                    => ['url' => $racine . '/profil.php',                 'label' => 'Mon profil'],
+        ];
+    }else {
+        $liens = [  
+        'accueil'                   => ['url' => $racine . '/accueil.php',                'label' => 'Accueil'],
+        ];
+    }
+
+    //Bloc pour mettre les pages de la navbarre en activé automatiquement
+>>>>>>> 16bf44278d6b3d902604c5687b115546de24af15
     foreach ($liens as $key => $lien) {
         $isActive = ($active === $key) ? ' active" aria-current="page' : '';
         echo '<li class="nav-item">';
         echo '<a class="nav-link text-white ' . $isActive . '" href="' . $lien['url'] . '">' . $lien['label'] . '</a>';
+        echo '</li>';
+    }
+    if (isset($_SESSION['role'])) {
+        $annuaireActif = in_array($active, ['annuaire_clients', 'annuaire_entreprise', 'annuaire_partenaires']);
+        echo '<li class="nav-item dropdown">';
+        echo '<a class="nav-link dropdown-toggle text-white' . ($annuaireActif ? ' active' : '') . '" href="#" role="button" data-bs-toggle="dropdown">Annuaires</a>';
+        echo '<ul class="dropdown-menu" style="background-color:#0B1526;">';
+        echo '<li><a class="dropdown-item' . ($active === 'annuaire_clients'     ? ' active' : '') . '" style="color:#1D9E75;" href="' . $racine . '/annuaire_clients.php">Clients</a></li>';
+        echo '<li><a class="dropdown-item' . ($active === 'annuaire_entreprise'  ? ' active' : '') . '" style="color:#1D9E75;" href="' . $racine . '/annuaire_entreprise.php">Entreprise</a></li>';
+        echo '<li><a class="dropdown-item' . ($active === 'annuaire_partenaires' ? ' active' : '') . '" style="color:#1D9E75;" href="' . $racine . '/annuaire_partenaires.php">Partenaires</a></li>';
+        echo '</ul>';
         echo '</li>';
     }
 
