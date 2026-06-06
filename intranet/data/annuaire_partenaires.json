@@ -16,7 +16,7 @@
         "email": "s.blanc@infosys-solutions.fr",
         "telephone": "03 21 98 76 54",
         "detail": "Bonjour",
-        "logo": "/img/img.png",
+        "logo": "../img/img.png",
         "descritption": "Éditeur de logiciels de gestion sur mesure et intégrateur de solutions réseaux pour les entreprises."
     },
     {
