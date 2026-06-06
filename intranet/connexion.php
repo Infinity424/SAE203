@@ -22,7 +22,7 @@ $messageErreur = isset($erreurs[$codeErreur]) ? $erreurs[$codeErreur] : '';
 <head>
     <?php parametrespage("Connexion"); ?>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100"  style="background-color:#0F1E38;">
     <?php navigation("connexion", "."); ?>
     <section class="container mt-4">
         <div class="row justify-content-center">

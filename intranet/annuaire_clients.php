@@ -88,7 +88,7 @@ if (isset($_GET['export'])) {
 <head>
     <?php parametrespage("Annuaire Clients"); ?>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100" style="background-color:#0F1E38;">
     <?php navigation("annuaire_clients", "."); ?>
     <section class="container mt-4">
         <h2 class="mb-3" style="color:#1D9E75;">Annuaire – Clients</h2>

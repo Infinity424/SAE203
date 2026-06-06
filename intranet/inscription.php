@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php parametrespage("Inscription"); ?>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100" style="background-color:#0F1E38;">
     <?php navigation("inscription", "."); ?>
     <section class="container mt-4">
         <div class="row justify-content-center">

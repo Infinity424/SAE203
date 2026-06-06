@@ -136,7 +136,7 @@ function normaliserRoles($role): array {
         select[multiple] { min-height: 120px; }
     </style>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100"  style="background-color:#0F1E38;">
     <?php navigation("administration", "."); ?>
     <section class="container mt-4">
         <h2 class="mb-3" style="color:#1D9E75;">Administration – Gestion des membres</h2>

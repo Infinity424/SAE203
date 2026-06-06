@@ -71,7 +71,7 @@ $equipements = [
         /* https://www.w3schools.com/howto/howto_css_flip_card.asp */
     </style>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100" style="background-color:#0F1E38;">
     <?php navigation("accueil", "."); ?>
     <section class="container mt-4">
         <div class="text-center text-white py-5">

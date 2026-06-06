@@ -147,7 +147,7 @@ function piedpage() {
     $heure = date("H:i:s");
     $annee = date("Y");
 
-    echo '<footer class="text-center py-4 mt-5" style="background-color:#0B1526;">';
+    echo '<footer class="text-center py-4 mt-auto" style="background-color:#0B1526;">';
     echo '<p class="mb-1" style="color:#1D9E75;">TechLoc &nbsp;|&nbsp; <a href="mailto:contact@techLoc.fr" style="color:#1D9E75;">contact@techLoc.fr</a> &nbsp;|&nbsp; Groupe 3</p>';
     echo '<p class="mb-1" style="color:#1D9E75;">&copy; ' . $annee . ' &nbsp;|&nbsp; ' . $date . ' &nbsp;|&nbsp; ' . $heure . '</p>';
     echo '</footer>';

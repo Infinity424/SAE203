@@ -89,7 +89,7 @@ if (!empty($revenusParClient)) {
         }
     </style>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100" style="background-color:#0F1E38;">
     <?php navigation("finance", "."); ?>
     
     <section class="container mt-4">
