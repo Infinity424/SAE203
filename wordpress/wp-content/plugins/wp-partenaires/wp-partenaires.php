@@ -9,7 +9,7 @@ Author: Techlok
 add_shortcode('partenaires', 'affiche_partenaire');
 
 function affiche_partenaire(){
-    $json_url = ABSPATH . 'intranet/data/annuaire_partenaires.json';
+    $json_url = '../../intranet/data/temoignages.json';
     $response = wp_remote_get($json_url);
 
     if(!file_exists($json_url)){
