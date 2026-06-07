@@ -133,9 +133,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <button type="submit" class="btn btn-dark">Créer le compte</button>
                             </div>
                         </form>
-                        <div class="text-center mt-3">
-                            <a href="./connexion.php">Déjà un compte ? Se connecter</a>
-                        </div>
                     </div>
                 </div>
                 <?php endif; ?>

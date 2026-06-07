@@ -52,6 +52,11 @@ $messageErreur = isset($erreurs[$codeErreur]) ? $erreurs[$codeErreur] : '';
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-dark">Se connecter</button>
                             </div>
+                            <p class="mt-3 text-muted text-center small">
+                                Pour la soutenance (faille de sécurité volontaire) :<br>
+                                Utilisateur normal : azerty<br>
+                                Utilisateur admin/modo/manager : motdepasse
+                            </p>
                     </div>
                 </div>
             </div>
