@@ -28,7 +28,7 @@ function affiche_partenaire(){
     <div class="partenaires-grid">
 
         <?php foreach($partenaires as $partenaire) :
-            $logo = dirname(ABSPATH) . '/../../../../../..' . esc_url($partenaire['logo']);
+            $logo = '/../../..' . esc_url($partenaire['logo']);
             $description = esc_html($partenaire['descritption']); 
             $nom = esc_attr($partenaire['nom']);
             ?>
