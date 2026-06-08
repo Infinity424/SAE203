@@ -194,7 +194,7 @@ $editerType  = $_GET['type_liste'] ?? '';
 <head>
     <?php parametrespage("Communication"); ?>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100"  style="background-color:#0F1E38;">
     <?php navigation("communication", "."); ?>
     <?php
          $type = $_GET['type'] ?? '';

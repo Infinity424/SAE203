@@ -81,7 +81,7 @@ if (is_string($rolesAffichage)) {
 <head>
     <?php parametrespage("Mon profil"); ?>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100" style="background-color:#0F1E38;">
     <?php navigation("profil", "."); ?>
     <section class="container mt-4">
         <h2 class="mb-3" style="color:#1D9E75;">Mon profil – <?php echo htmlspecialchars($pseudo); ?></h2>

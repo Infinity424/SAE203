@@ -59,6 +59,7 @@ function membreMatcheRecherche(array $rolesUser, string $recherche, array $acces
 $recherche = trim($_GET['recherche'] ?? '');
 if ($recherche !== '' && !empty($membres)) {
     $membres = array_filter($membres, function($m) use ($recherche, $accesParPage) {
+        // Normaliser les rôles du membre
         $r = $m['role'] ?? '';
         $rolesUser = is_array($r) ? $r : array_filter(array_map('trim', explode(',', $r)));
 

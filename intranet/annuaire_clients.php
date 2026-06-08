@@ -42,7 +42,7 @@ if (isset($_GET['export'])) {
     // Relire les données (les filtres de recherche ne s'appliquent pas à l'export)
     $tousClients = json_decode(file_get_contents($fichierClients), true) ?? [];
  
-    $colonnes = ['nom', 'entreprise', 'email', 'telephone', 'adresse'];
+    $colonnes = ['nom', 'entreprise', 'email', 'telephone'];
  
     if ($_GET['export'] === 'csv') {
  
@@ -50,14 +50,13 @@ if (isset($_GET['export'])) {
         header('Content-Disposition: attachment; filename="annuaire_clients.csv"');
         $out = fopen('php://output', 'w');
         fprintf($out, chr(0xEF) . chr(0xBB) . chr(0xBF)); // BOM UTF-8 pour Excel
-        fputcsv($out, ['Nom', 'Entreprise', 'Email', 'Téléphone', 'Adresse'], ';');
+        fputcsv($out, ['Nom', 'Entreprise', 'Email', 'Téléphone'], ';');
         foreach ($tousClients as $c) {
             fputcsv($out, [
                 $c['nom']        ?? '',
                 $c['entreprise'] ?? '',
                 $c['email']      ?? '',
                 $c['telephone']  ?? '',
-                $c['adresse']    ?? '',
             ], ';');
         }
         fclose($out);
@@ -76,7 +75,6 @@ if (isset($_GET['export'])) {
             echo "Entreprise : " . ($c['entreprise'] ?? '—') . "\n";
             echo "Email      : " . ($c['email']      ?? '—') . "\n";
             echo "Téléphone  : " . ($c['telephone']  ?? '—') . "\n";
-            echo "Adresse    : " . ($c['adresse']    ?? '—') . "\n";
             echo $ligne;
         }
         exit();

@@ -22,7 +22,7 @@ $messageErreur = isset($erreurs[$codeErreur]) ? $erreurs[$codeErreur] : '';
 <head>
     <?php parametrespage("Connexion"); ?>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100"  style="background-color:#0F1E38;">
     <?php navigation("connexion", "."); ?>
     <section class="container mt-4">
         <div class="row justify-content-center">
@@ -52,6 +52,11 @@ $messageErreur = isset($erreurs[$codeErreur]) ? $erreurs[$codeErreur] : '';
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-dark">Se connecter</button>
                             </div>
+                            <p class="mt-3 text-muted text-center small">
+                                Pour la soutenance (faille de sécurité volontaire) :<br>
+                                Utilisateur normal : azerty<br>
+                                Utilisateur admin/modo/manager : motdepasse
+                            </p>
                     </div>
                 </div>
             </div>

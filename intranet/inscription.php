@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php parametrespage("Inscription"); ?>
 </head>
-<body style="background-color:#0F1E38;">
+<body class="d-flex flex-column min-vh-100" style="background-color:#0F1E38;">
     <?php navigation("inscription", "."); ?>
     <section class="container mt-4">
         <div class="row justify-content-center">
@@ -133,9 +133,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <button type="submit" class="btn btn-dark">Créer le compte</button>
                             </div>
                         </form>
-                        <div class="text-center mt-3">
-                            <a href="./connexion.php">Déjà un compte ? Se connecter</a>
-                        </div>
                     </div>
                 </div>
                 <?php endif; ?>
